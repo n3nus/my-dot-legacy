@@ -77,6 +77,5 @@ The most important shortcuts to survive:
 - Base system: [End4 Dotfiles](https://github.com/end-4/dots-hyprland) (The legend).
 - Icons & Theme: Catppuccin / Material You.
 - Me: For breaking things until they worked again.
-```
 
 
