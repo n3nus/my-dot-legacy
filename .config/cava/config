@@ -1,0 +1,34 @@
+[general]
+framerate = 60
+# Damit die Blöcke schön fett aussehen
+bar_width = 3
+bar_spacing = 1
+
+[color]
+# Gradient WIEDER AN (damit es bunt ist)
+gradient = 1
+gradient_count = 6
+
+# Deine schönen Pastell-Farben von vorhin:
+gradient_color_1 = '#81C8BE'
+gradient_color_2 = '#99D1DB'
+gradient_color_3 = '#85C1DC'
+gradient_color_4 = '#8CAAEE'
+gradient_color_5 = '#CA9EE6'
+gradient_color_6 = '#E78284'
+
+[output]
+method = ncurses
+style = mono # oder stereo, wie du magst
+
+# ASCII-Modus erzwingen (das macht die Blöcke!)
+method = noncurses
+bar_delimiter = 0
+frame_delimiter = 0
+
+# WICHTIG: Das sorgt dafür, dass er nicht die glatten Balken nimmt
+# Wir sagen ihm explizit: Zeichne Blöcke!
+[output.ncurses]
+# Wenn du das auskommentierst, nimmt er Blöcke.
+# Wenn du spezielle Zeichen willst, kannst du sie hier definieren.
+# Für den puren 8-Bit Look ist Standard oft am besten.

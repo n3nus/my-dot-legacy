@@ -1,0 +1,117 @@
+# Modern & Adaptive Nushell Style
+add_newline = true
+
+# Wir nutzen keine feste Palette, sondern die Systemfarben (vom Wallpaper)
+
+# Das Layout mit den geschwungenen Linien
+format = """
+[╭─](bold blue)$cmd_duration$directory$git_branch$git_status
+[╰─](bold blue)$character"""
+
+# Rechte Seite (Zeit & User) - Simpler gehalten
+right_format = """$username$hostname$time"""
+
+# ---------------------------------------------------
+#  ZEICHEN & EINGABE
+# ---------------------------------------------------
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold blue)"
+
+# ---------------------------------------------------
+#  LINKER TEIL (Hauptinfos)
+# ---------------------------------------------------
+
+[directory]
+style = "bold yellow" # War 'peach', Gelb passt sich super an
+format = "[ 󰉋 $path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Deine coolen Icons behalten wir!
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Videos" = " "
+"Desktop" = " "
+
+[git_branch]
+symbol = " "
+style = "bold purple" # Lila ist ein guter Kontrast zum Gelb
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "󰞇 "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 2000 # Zeige Zeit nur an, wenn es länger als 2s dauert (sauberer)
+format = "[󰪢 $duration](bold white) "
+show_milliseconds = false
+
+# ---------------------------------------------------
+#  RECHTER TEIL (Infos)
+# ---------------------------------------------------
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "dimmed white" # Dezent im Hintergrund
+time_format = "%H:%M"
+
+[username]
+show_always = false
+format = "[$user]($style)@"
+style_user = "bold cyan" # War 'sapphire'
+
+[hostname]
+ssh_only = true
+format = "[$hostname]($style) "
+style = "bold cyan"
+
+# ---------------------------------------------------
+#  SPRACHEN (Nur anzeigen wenn nötig)
+# ---------------------------------------------------
+
+[package]
+disabled = true
+
+[nodejs]
+symbol = " "
+style = "green"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = " "
+style = "yellow"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style = "red"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style = "cyan"
+format = "[$symbol$version]($style) "
+
+[kubernetes]
+disabled = false
+format = "[$symbol$context]($style) "
+style = "bold blue"
+symbol = "󱃾 "

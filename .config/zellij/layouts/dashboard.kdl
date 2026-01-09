@@ -1,0 +1,33 @@
+layout {
+    // Standard-Pane definieren (mit Rändern!)
+    default_tab_template {
+        pane size=1 borderless=false {
+            plugin location="zellij:compact-bar"
+        }
+        children
+    }
+
+    // Die Aufteilung
+    pane split_direction="vertical" {
+        
+        // --- LINKE SPALTE (45% Breite) ---
+        pane split_direction="horizontal" size="45%" {
+            
+            // Links Oben: Cava
+            pane command="cava" name="Visualizer" {
+                // Keine Argumente nötig, startet einfach
+            }
+
+            // Links Unten: Bonsai
+            pane command="cbonsai" name="Zen Mode" {
+                args "-l" "-i"
+            }
+        }
+
+        // --- RECHTE SPALTE (Der Rest) ---
+        // Startet Fastfetch und bleibt dann als Terminal nutzbar
+        pane command="zsh" name="Main" {
+            args "-c" "fastfetch; exec zsh"
+        }
+    }
+}
