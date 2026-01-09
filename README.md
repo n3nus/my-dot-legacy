@@ -61,7 +61,7 @@ The most important shortcuts to survive:
 | Keybind | Action |
 | :--- | :--- |
 | `Super` + `Enter` | Open **Ghostty** (Terminal) |
-| `Super` + `A` | Open App Launcher |
+| `Super`        | Open App Launcher |
 | `Super` + `W` | Open Browser (Zen) |
 | `Super` + `E` | Open File Manager |
 | `Super` + `Q` | Close Window |
