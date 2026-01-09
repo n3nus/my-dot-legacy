@@ -6,7 +6,7 @@ Welcome to my personal configuration for **CachyOS (Arch Linux) + Hyprland**.
 This is a heavily modified version of the [End4 dotfiles](https://github.com/end-4/dots-hyprland), tuned for maximum performance, modern aesthetics, and a mouse-free workflow.
 
 ![Screenshot](screenshots/preview.png)
-*(Note: Don't forget to put a cool screenshot of your desktop in a 'screenshots' folder and name it preview.png!)*
+
 
 ## ✨ The Goods (Tech Stack)
 
