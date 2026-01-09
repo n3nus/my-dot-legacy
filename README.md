@@ -37,7 +37,7 @@ I wrote a magic script that does everything for you. It installs packages, backs
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/my-dot-legacy.git
+   git clone https://github.com/n3nus/my-dot-legacy.git
    cd my-dot-legacy
    ```
 
