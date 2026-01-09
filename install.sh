@@ -20,30 +20,38 @@ fi
 # 2. SOFTWARE INSTALLATION
 echo -e "${BLUE}📦 Summoning the digital spirits (installing packages)...${RESET}"
 
-# Official Packages
+# Official Packages (Pacman)
 PKGS=(
   git
   zsh
-  neovim
-  fastfetch
-  cava
-  btop
-  eza
-  zoxide
-  fzf
-  bat
-  ripgrep
-  imagemagick
-  ttf-jetbrains-mono-nerd
+  # Editor & Tools
+  neovim  # The Editor
+  ripgrep # Required for LazyVim (grep but faster)
+  fd      # Required for LazyVim (find but faster)
+  nodejs  # Required for many Neovim LSPs
+  npm     # Package manager for Neovim LSPs
+  gcc     # Compiler for Neovim Treesitter
+  make    # Build tool
+  unzip   # Extract tool
+  # Aesthetics & System
+  fastfetch               # Flexing info
+  cava                    # Audio Visualizer
+  btop                    # Task Manager
+  eza                     # ls but better
+  zoxide                  # cd but smarter
+  fzf                     # Fuzzy finder
+  bat                     # cat with wings
+  imagemagick             # Image manipulation
+  ttf-jetbrains-mono-nerd # The font
 )
 
-# AUR / CachyOS Packages (Ghostty, etc.)
+# AUR / CachyOS Packages
 PKGS_AUR=(
-  ghostty
-  yazi
-  cbonsai-git
-  localsend-bin
-  starship
+  ghostty       # The Terminal
+  yazi          # File Manager
+  cbonsai-git   # Zen mode
+  localsend-bin # AirDrop alternative
+  starship      # Shell prompt
 )
 
 # System Update & Installation
@@ -52,7 +60,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm "${PKGS[@]}"
 yay -S --needed --noconfirm "${PKGS_AUR[@]}"
 
-echo -e "${GREEN}✅ Arsenal acquired. Your system is now armed and dangerous.${RESET}"
+echo -e "${GREEN}✅ Arsenal acquired. LazyVim dependencies and Tools are ready.${RESET}"
 
 # 3. COPY CONFIGS (WITH BACKUP)
 echo -e "${BLUE}📂 Teleporting dotfiles to their new home...${RESET}"
@@ -77,6 +85,7 @@ deploy_config() {
 }
 
 # List of folders to deploy
+# Note: 'nvim' contains your LazyVim config!
 FOLDERS=("hypr" "ghostty" "fastfetch" "nvim" "cava" "quickshell" "illogical-impulse" "zellij")
 
 for f in "${FOLDERS[@]}"; do
