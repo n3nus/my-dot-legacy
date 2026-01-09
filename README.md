@@ -2,7 +2,7 @@
 
 > **"Because default settings are for people who have better things to do. We don't."**
 
-## Published for Friends
+Published for Friends :)
 Welcome to my personal configuration for **CachyOS (Arch Linux) + Hyprland**.
 This is a heavily modified version of the [End4 dotfiles](https://github.com/end-4/dots-hyprland), tuned for maximum performance, modern aesthetics, and a mouse-free workflow.
 
